@@ -1,0 +1,260 @@
+/* Core Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', Helvetica, sans-serif;
+}
+
+/* This is used for the navigation bar */
+
+nav {
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    background-color: #c00c0b;
+
+    align-items: center ;
+    justify-content: center;
+    z-index: 1;
+}
+
+nav ul {
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    justify-content: space-evenly;
+}
+
+nav li {
+    display: inline-block;
+    height: auto;
+    text-align: center;
+}
+
+nav a {
+    padding: 10px;
+    border: solid 1px #ffffff;
+    width: 175px;
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav a:hover {
+    font-weight: 700;
+    color: #c00c0b;
+    background: #ffffff;
+}
+
+/*This is the main containter and content formatting */
+
+main {
+    position: relative;
+    top: 60px;
+    background-color: #a7b8ef;
+    text-align: left;
+}
+
+h1 {
+    padding: 3rem 0;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+/*This is the squad card containers */
+
+#squad {
+    position: relative;
+    width: 90%;
+    margin: 0 auto 3rem;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem 5rem;
+    justify-content: center;
+}
+
+.squadMember {
+    height: 190px;
+    border-radius: 100px;
+    display: grid;
+    grid-template-columns: 0.75fr 1fr;
+}
+
+.squadMember:nth-child(4n + 1) {
+    background-color: #5c7ce7;
+
+}
+
+.squadMember:nth-child(4n + 2) {
+    background-color: #263568;
+    color: #ffffff;
+}
+
+.squadMember:nth-child(4n + 3) {
+    background-color: #fb6f6f;
+
+}
+
+.squadMember:nth-child(4n + 4) {
+    background-color: #c00c0b;
+    color: #ffffff;
+}
+
+.playerPhoto img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 100px 10px 10px 100px;
+}
+
+.cardTitles {
+    font-size: 0.75rem;
+    padding: 10px 0 0 10px;
+}
+
+.cardInfo {
+    font-size: 1rem;
+    font-weight: 700;
+    padding-left: 10px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+}
+
+/* SquadCard Button */
+
+#squadButton {
+    display: inline-block;
+    width: 150px;
+    height: 20px;
+    border-radius: 50px;
+    margin: 10px 10px 20px 10px;
+    background-color: #f6ff00;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    color: #000000;
+}
+
+#squadButton:hover {
+    color: #ffffff;
+    background-color: #820100;
+}
+
+/* Footer section */
+
+footer {
+    background-color: #c00c0b;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 2fr;
+    grid-template-areas:
+        "footer-first-column footer-second-column footer-logo footer-social-media";
+}
+
+footer img {
+    height: 80%;
+    width: auto;
+}
+
+footer a {
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px;
+}
+
+#footer-first-column {
+    grid-area: footer-first-column;
+    padding: 20px;
+}
+
+#footer-second-column {
+    grid-area: footer-second-column;
+    padding: 20px 0;
+}
+
+#footer-logo {
+    grid-area: footer-logo;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer-social-media {
+    grid-area: footer-social-media;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#social-media-icons {
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+#footer-social-media img {
+    height: 50px;
+    width: auto;
+}
+
+
+
+/* Media Queries for smaller screens */
+
+@media(max-width: 700px) {
+    
+    /*Changes the footer */
+    footer {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "footer-first-column footer-logo footer-social-media"
+            "footer-second-column footer-logo footer-social-media";
+    }
+
+    #footer-first-column {
+        padding-bottom: 0;
+    }
+    #footer-second-column {
+        padding: 0 20px;
+    }
+
+    #footer-social-media {
+        align-items: flex-start;
+        padding: 75px 0;
+    }
+}
+
+/* Changes the players display for smaller screens */
+
+@media(max-width: 1300px) {
+    #squad {
+        width: 90%;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem 2.5rem;
+    }
+}
+
+@media(max-width: 900px) {
+    #squad {
+        width: 80%;
+        grid-template-columns: 1fr;
+    }
+}
+
+/*Changes the Nav bar for smaller screens */
+
+@media(max-width: 900px) {
+    
+    nav a {
+        width: auto;
+    }
+}
+

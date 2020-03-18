@@ -1,0 +1,344 @@
+/* Core Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', Helvetica, sans-serif;
+}
+
+h1 {
+    padding: 3rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+p {
+    width: 60%;
+    margin: auto;
+    font-size: 1.5rem;
+}
+
+.homepage-button {
+    display: inline-block;
+    margin: 3rem;
+    border: 0;
+    padding: 1rem 2rem;
+    border-radius: 100px;
+    color: #000000;
+    text-decoration: none;
+    background-color: #f6ff00;
+    font-size: 1.5rem;  
+    box-shadow: 0 5px 15px #011142;
+}
+
+.homepage-button:hover {
+    background-color: #c00c0b;
+    color: #ffffff;
+}
+
+/* This is used for the navigation bar */
+
+nav {
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    background-color: #c00c0b;
+
+    align-items: center ;
+    justify-content: center;
+    z-index: 1;
+}
+
+nav ul {
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    justify-content: space-evenly;
+
+}
+
+nav li {
+    display: inline-block;
+    height: auto;
+    text-align: center;
+}
+
+nav a {
+    padding: 10px;
+    border: solid 1px #ffffff;
+    width: 175px;
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav a:hover {
+    font-weight: 700;
+    color: #c00c0b;
+    background: #ffffff;
+}
+
+
+/*This is the main containter and content formatting */
+
+main {
+    position: relative;
+    top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, minmax(710px, auto)) auto;
+    grid-template-areas:
+        "header about-us"
+        "season-19-20 team-action-shot"
+        "team-photo the-squad"
+        "contact-us manager-photos"
+        "footer footer";
+}
+
+#about-us {
+    grid-area: about-us;
+}
+
+#the-squad {
+    grid-area: the-squad;
+}
+
+#season-19-20 {
+    grid-area: season-19-20;
+}
+
+#contact-us {
+    grid-area: contact-us;
+}
+
+/* This is the Header Section */
+
+header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-size: 98% 75%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-color: #a7b8ef;
+}
+
+header img {
+    height: auto;
+    width: 50%;
+}
+
+/*These classes are used to format 
+the different main content sections */
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.homepage-light-blue {
+    background-color: #a7b8ef;
+    color: #000000;
+}
+
+.homepage-dark-blue {
+    background-color: #011142;
+    opacity: 0.8;
+    color: #FFFFFF;
+}
+
+/* These IDs are for Photo Sections */
+
+#action-shot-container {
+    grid-area: team-action-shot;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;  
+    background-color:  rgba(1,17,66, 0.8);
+}
+
+#team-photo-container {
+    grid-area: team-photo;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;    
+    background-color: #a7b8ef;   
+}
+
+#team-action-shot, 
+    #team-photo {
+    width: 90%;
+    height: 75%;
+    object-fit: cover;
+    border-radius: 1rem;
+    align-self: center;
+}
+#team-action-shot {
+    box-shadow: 10px 10px 20px  #011142
+}
+
+#team-photo {
+    box-shadow: -10px 10px 20px  #011142
+}
+
+#manager-photos {
+    grid-area: manager-photos;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(1,17,66, 0.8);   
+}
+
+#manager-one, #manager-two {
+    height: auto;
+    width: 40%;
+}
+
+/* Footer section */
+
+footer {
+    grid-area: footer;
+    background-color: #c00c0b;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 2fr;
+    grid-template-areas:
+        "footer-first-column footer-second-column footer-logo footer-social-media";
+}
+
+footer img {
+    height: 80%;
+    width: auto;
+}
+
+footer a {
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px;
+}
+
+#footer-first-column {
+    grid-area: footer-first-column;
+    padding: 20px;
+}
+
+#footer-second-column {
+    grid-area: footer-second-column;
+    padding: 20px 0;
+}
+
+#footer-logo {
+    grid-area: footer-logo;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer-social-media {
+    grid-area: footer-social-media;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#social-media-icons {
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+#footer-social-media img {
+    height: 50px;
+    width: auto;
+}
+
+
+
+
+
+/* Media Queries for smaller screens */
+
+@media(max-width: 700px) {
+
+    /* Changes the grid */
+
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, auto) auto;
+        grid-template-areas: 
+        "header" 
+        "about-us"
+        "team-action-shot"
+        "season-19-20"
+        "team-photo"
+        "the-squad"
+        "manager-photos"
+        "contact-us"
+        "footer"
+    }
+
+    /*Changes container formatting */
+
+    .content-container {
+        padding: 20px 10px;
+    }
+
+    #action-shot-container {
+        justify-content: center;
+    }
+    
+    #team-photo-container {
+        justify-content: center;
+    }
+
+    /*Changes the photos */
+
+    #team-action-shot,
+        #team-photo {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            align-self: center;
+    }
+
+    .photos {
+        margin-top: 2rem;
+    }
+
+    /*Changes the footer */
+    footer {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "footer-first-column footer-logo footer-social-media"
+            "footer-second-column footer-logo footer-social-media";
+    }
+
+    #footer-first-column {
+        padding-bottom: 0;
+    }
+    #footer-second-column {
+        padding: 0 20px;
+    }
+
+    #footer-social-media {
+        align-items: flex-start;
+        padding: 75px 0;
+    }
+
+}
+
+/*Changes the Nav bar for smaller screens */
+
+@media(max-width: 900px) {
+    
+    nav a {
+        width: auto;
+    }
+}
