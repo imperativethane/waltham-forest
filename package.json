@@ -13,7 +13,7 @@
     "gulp-connect": "^5.7.0"
   },
   "dependencies": {
-    "handlebars": "^4.7.3",
+    "handlebars": "^4.7.7",
     "jquery": "^3.4.1",
     "node-fetch": "^2.6.0"
   }
